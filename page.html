@@ -39,12 +39,12 @@ It allows the user to model complex workflows with its fan-in, fan-out dependenc
 Setup
 </h2>
 <p>
-&nbsp; &nbsp;You can download goCD from <a href="https://www.gocd.io/download/">the goCD website</a>. 
+&nbsp; &nbsp;You can download GoCD from <a href="https://www.gocd.io/download/">the GoCD website</a>. 
 It is suggested that you use a 64-bit server with a 32-bit agent, so that is what we did.  
 We followed the prompts for installation on both, making sure we bundled JRE instead of specifying the location of our JDK so that there were no future issues for us. 
 The agent can also be found at the same URL. 
 For our agent, we left the URL blank so that the default would be set to the local host. 
-goCD made it's own icon based on default. We clicked it and it brought up goCD in Google Chrome. 
+goCD made it's own icon based on default. We clicked it and it brought up GoCD in Google Chrome. 
 There are three steps listed. 
 </p>
 <p><b>
@@ -76,7 +76,7 @@ Results
 &nbsp; &nbsp;The pipeline is paused so that you can change some settings. 
 You can now unpause it for now to see the output. It will slowly try to build. 
 Right now, it is failing... We tried triggering the pipeline but there is something going wrong. 
-I think someone made a change while i was trying to set goCD up and run and now i am getting a name for a commit when i check the changes. 
+I think someone made a change while I was trying to set goCD up and run and now i am getting a name for a commit when i check the changes. 
 It shows that last commit by taylor Otwell and the merge request he put in.
 
 Instead of laravel, we decided a repository with relatively no activity would help fix the issue.
@@ -85,14 +85,14 @@ Instead, we used derby, which also seemed like it wasn't working.
 Although goCD works well to describe dependencies on big files, I don't think it is practical for this project considering how slow my computer is.
 We are going to try another repository yet again. goCD has been running derby for about 2 hours on my computer.
 It is still in progress.
-Our third trial will be akuron. It was last updated in feb of 2013 and it is a relatively small project.
+Our third trial will be akuron. It was last updated in Feb. of 2013 and it is a relatively small project.
 
 </p>
 <h2>
 Usefulness
 </h2>
 <p>
-&nbsp; &nbsp;goCD is useful for large files. It will show you mapping between different files. 
+&nbsp; &nbsp;GoCD is useful for large files. It will show you mapping between different files. 
 This is important when you want to see what relies on something else. 
 The pipeline will execute each file based on the hierarchy and you are able to see which files are children to parents. 
 You are also able to see exact git commits made by someone at a certain time and see the product growing over time.  
@@ -106,8 +106,9 @@ Downfalls
 In theory, you should want more agents for parallelization. 
 If you only have one agent, this means that all processes will be waiting until the agent is done with it's current process. 
 For our purposes, we have only downloaded one agent to see everything done one after another. 
-Using extra agents can also cause problems - such as if agent 1 tries to run "stage 1" and agent 2 tries to run "stage 2", it will most likely not work because agent 1 and 2 are not given the same information. 
-While building your pipeline with goCD, children will execute based on their hierarchy. 
+Using extra agents can also cause problems - such as if agent 1 tries to run "stage 1" and agent 2 tries to run "stage 2",
+ it will most likely not work because agent 1 and 2 are not given the same information. 
+While building your pipeline with GoCD, children will execute based on their hierarchy. 
 You may start with a green value stream, meaning that everything is "good to go" but it may change once you reach a certain part of the pipeline. 
 You can have a yellow value stream or a red value stream. Yellow means that it is building and red is failing. 
 When something fails, it will not tell you directly, you will have to go and dig in to the problem yourself.
