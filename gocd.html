@@ -16,6 +16,10 @@ h1{
 h2{
 	margin-left: 130px
 }
+.IMG{
+	max-height: 150px
+	max_width: 200px
+}
 </style>
 
 </head>
@@ -59,8 +63,8 @@ Step 2:
 </b> Materials - There is an option for material type. 
 Under this, there are several things listed. 
 For example, there is subversion, git, mercurial, etc. 
-For now, we chose Git as the "Material Type" and for the URL, we are using the laravel git repository. goCD will be looking at the master branch. 
-"poll for new changes" was already marked, so we kept that as default. We then checked the connection to make sure goCD understood the URL it was given.
+For now, we chose Git as the "Material Type" and for the URL, we are using the laravel git repository. GoCD will be looking at the master branch. 
+"poll for new changes" was already marked, so we kept that as default. We then checked the connection to make sure GoCD understood the URL it was given.
 You can then continue to the next step.
 </p>
 <p>
@@ -76,8 +80,8 @@ Results
 &nbsp; &nbsp;The pipeline is paused so that you can change some settings. 
 You can now unpause it for now to see the output. It will slowly try to build. 
 Right now, it is failing... We tried triggering the pipeline but there is something going wrong. 
-I think someone made a change while I was trying to set goCD up and run and now i am getting a name for a commit when i check the changes. 
-It shows that last commit by taylor Otwell and the merge request he put in.
+I think someone made a change while I was trying to set GoCD up and run and now i am getting a name for a commit when i check the changes. 
+It shows that last commit by Taylor Otwell and the merge request he put in.
 
 Instead of laravel, we decided a repository with relatively no activity would help fix the issue.
 We are also keeping "poll for new changes" unmarked. This may have caused the failing. 
@@ -113,6 +117,20 @@ You may start with a green value stream, meaning that everything is "good to go"
 You can have a yellow value stream or a red value stream. Yellow means that it is building and red is failing. 
 When something fails, it will not tell you directly, you will have to go and dig in to the problem yourself.
 </p>
+<p>
+<tr>
+<td>
+<img class = "IMG" src = "Unicorn.gif" alt = ""/>
+</td>
+</tr>
+That was a look at GoCD.
+
+
+
+
+</p>
+
+
 
 </body>
 </html>
