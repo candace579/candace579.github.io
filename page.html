@@ -2,15 +2,25 @@
 <html>
 <body bgcolor="#caadf7">
 
-<h1><b>goCD</b> - Continuous Development</h1>
-<p>&nbsp; &nbsp;A look at 'go' by Candace Hicks and Kaitlyn Glodde</p>
-<p>&nbsp; &nbsp;In this demo, we will demonstrate how GoCD works and how to use it, as well as show GoCD in action. 
+<h1><b>
+goCD
+</b>
+ - Continuous Development</h1>
+<p>
+&nbsp; &nbsp;A look at 'go' by Candace Hicks and Kaitlyn Glodde
+</p>
+<p>
+&nbsp; &nbsp;In this demo, we will demonstrate how GoCD works and how to use it, as well as show GoCD in action. 
 We will show you how you can see how your workflow really works, as well as some code coverage with GoCD. 
 We will also discuss the software required for the use of GoCD, and other helpful programs.</p>
-<p>&nbsp; &nbsp;GoCD is an open source software tool that is used for continuous delivery and to visualize complex workflows easily. 
+<p>
+&nbsp; &nbsp;GoCD is an open source software tool that is used for continuous delivery and to visualize complex workflows easily. 
 It allows the user to model complex workflows with its fan-in, fan-out dependency management system.</p>
-<h2>Setup</h2>
-<p>&nbsp; &nbsp;You can download goCD from https://www.gocd.io/download/. 
+<h2>
+Setup
+</h2>
+<p>
+&nbsp; &nbsp;You can download goCD from https://www.gocd.io/download/. 
 It is suggested that you use a 64-bit server with a 32-bit agent, so that is what we did.  
 We followed the prompts for installation on both, making sure we bundled JRE instead of specifying the location of our JDK so that there were no future issues for us. 
 The agent can also be found at the same URL. 
@@ -18,11 +28,16 @@ For our agent, we left the URL blank so that the default would be set to the loc
 goCD made it's own icon based on default. We clicked it and it brought up goCD in Google Chrome. 
 There are three steps listed. 
 </p>
-<p><b>Step 1:</b> Basic Settings - We set up our Pipeline name as CandaceandKaitlyn and the Pipeline Group name as default. 
+<p><b>
+Step 1:
+</b> 
+Basic Settings - We set up our Pipeline name as CandaceandKaitlyn and the Pipeline Group name as default. 
 Clicked next.
 </p>
 <p>
-<b>Step 2:</b> Materials - There is an option for material type. 
+<b>
+Step 2:
+</b> Materials - There is an option for material type. 
 Under this, there are several things listed. 
 For example, there is subversion, git, mercurial, etc. 
 For now, we chose Git as the "Material Type" and for the URL, we are using the laravel git repository. goCD will be looking at the master branch. 
@@ -30,11 +45,16 @@ For now, we chose Git as the "Material Type" and for the URL, we are using the l
 You can then continue to the next step.
 </p>
 <p>
-<b>Step 3:</b> Stage/Job - Stage name is Stage1. Job Name - defaultJob. 
+<b>
+Step 3:
+</b> Stage/Job - Stage name is Stage1. Job Name - defaultJob. 
 We changed the task type to the ./build command and we pressed finish. Pipeline is now made.
 </p>
-<h2>Results</h2>
-<p>&nbsp; &nbsp;The pipeline is paused so that you can change some settings. 
+<h2>
+Results
+</h2>
+<p>
+&nbsp; &nbsp;The pipeline is paused so that you can change some settings. 
 You can now unpause it for now to see the output. It will slowly try to build. 
 Right now, it is failing... We tried triggering the pipeline but there is something going wrong. 
 I think someone made a change while i was trying to set goCD up and run and now i am getting a name for a commit when i check the changes. 
@@ -49,15 +69,21 @@ It is still in progress.
 Our third trial will be akuron. It was last updated in feb of 2013 and it is a relatively small project.
 
 </p>
-<h2>Usefulness</h2>
-<p>&nbsp; &nbsp;goCD is useful for large files. It will show you mapping between different files. 
+<h2>
+Usefulness
+</h2>
+<p>
+&nbsp; &nbsp;goCD is useful for large files. It will show you mapping between different files. 
 This is important when you want to see what relies on something else. 
 The pipeline will execute each file based on the hierarchy and you are able to see which files are children to parents. 
 You are also able to see exact git commits made by someone at a certain time and see the product growing over time.  
 It gives you a lot of visibility into  who's doing what.
 </p>
-<h2>Downfalls</h2>
-<p>&nbsp; &nbsp;Top level pipelines can execute in parallel. An agent helps execute. 
+<h2>
+Downfalls
+</h2>
+<p>
+&nbsp; &nbsp;Top level pipelines can execute in parallel. An agent helps execute. 
 In theory, you should want more agents for parallelization. 
 If you only have one agent, this means that all processes will be waiting until the agent is done with it's current process. 
 For our purposes, we have only downloaded one agent to see everything done one after another. 
