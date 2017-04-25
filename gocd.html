@@ -8,7 +8,7 @@ body{
 	background-repeat: no-repeat;
 }
 p{
-	margin: 10px 160px 20px 160px;
+	margin: 10px 170px 20px 170px;
 }
 h1{
 	margin-left: 130px
@@ -37,25 +37,25 @@ GoCD
 
  </h1>
 <p>
-&nbsp; &nbsp;A look at 'go' by Candace Hicks and Kaitlyn Glodde
+&nbsp; &nbsp; &nbsp; &nbsp;A look at 'go' by Candace Hicks and Kaitlyn Glodde
 </p>
 <p>
-&nbsp; &nbsp;In this demo, we will demonstrate how GoCD works and how to use it, as well as show GoCD in action. 
+&nbsp; &nbsp; &nbsp; &nbsp;In this demo, we will demonstrate how GoCD works and how to use it, as well as show GoCD in action. 
 We will show you how you can see how your workflow really works, as well as some code coverage with GoCD. 
 We will also discuss the software required for the use of GoCD, and other helpful programs.</p>
 <p>
-&nbsp; &nbsp;GoCD is an open source software tool that is used for continuous delivery and to visualize complex workflows easily. 
+&nbsp; &nbsp; &nbsp; &nbsp;GoCD is an open source software tool that is used for continuous delivery and to visualize complex workflows easily. 
 It allows the user to model complex workflows with its fan-in, fan-out dependency management system.</p>
 <h2>
 Setup
 </h2>
 <p>
-&nbsp; &nbsp;You can download GoCD from <a href="https://www.gocd.io/download/">the GoCD website</a>. 
+&nbsp; &nbsp; &nbsp; &nbsp;You can download GoCD from <a href="https://www.gocd.io/download/">the GoCD website</a>. 
 It is suggested that you use a 64-bit server with a 32-bit agent, so that is what we did.  
 We followed the prompts for installation on both, making sure we bundled JRE instead of specifying the location of our JDK so that there were no future issues for us. 
 The agent can also be found at the same URL. 
 For our agent, we left the URL blank so that the default would be set to the local host. 
-goCD made it's own icon based on default. We clicked it and it brought up GoCD in Google Chrome. 
+GoCD made it's own icon based on default. We clicked it and it brought up GoCD in Google Chrome. 
 There are three steps listed. 
 </p>
 <p><b>
@@ -84,7 +84,28 @@ We changed the task type to the ./build command and we pressed finish. Pipeline 
 <p>
 <img class = "IMG" src = "pic1forgocd.png" alt = ""/>
 </p>
+<p>
+
 <img class = "IMG" src = "pic2forgocd.png" alt = ""/>
+</p><p>
+<img class = "IMG" src = "pic2forgocd.png" alt = ""/>
+</p><p>
+<img class = "IMG" src = "pic4.png" alt = ""/>
+</p>
+<p>
+<img class = "IMG" src = "pic5.png" alt = ""/>
+</p><p>
+<img class = "IMG" src = "pic6.png" alt = ""/>
+</p>
+<p>
+<img class = "IMG" src = "pic7.png" alt = ""/>
+</p>
+<p>
+<img class = "IMG" src = "pic8.png" alt = ""/>
+</p>
+<p>
+<img class = "IMG" src = "pic9.png" alt = ""/>
+</p>
 
 
 
@@ -92,7 +113,7 @@ We changed the task type to the ./build command and we pressed finish. Pipeline 
 Results
 </h2>
 <p>
-&nbsp; &nbsp;The pipeline is paused so that you can change some settings. 
+&nbsp; &nbsp; &nbsp; &nbsp;The pipeline is paused so that you can change some settings. 
 You can now unpause it for now to see the output. It will slowly try to build. 
 Right now, it is failing... We tried triggering the pipeline but there is something going wrong. 
 I think someone made a change while I was trying to set GoCD up and run and now i am getting a name for a commit when i check the changes. 
@@ -111,7 +132,7 @@ Our third trial will be akuron. It was last updated in Feb. of 2013 and it is a 
 Usefulness
 </h2>
 <p>
-&nbsp; &nbsp;GoCD is useful for large files. It will show you mapping between different files. 
+&nbsp; &nbsp; &nbsp; &nbsp;GoCD is useful for large files. It will show you mapping between different files. 
 This is important when you want to see what relies on something else. 
 The pipeline will execute each file based on the hierarchy and you are able to see which files are children to parents. 
 You are also able to see exact git commits made by someone at a certain time and see the product growing over time.  
@@ -121,7 +142,7 @@ It gives you a lot of visibility into  who's doing what.
 Downfalls
 </h2>
 <p>
-&nbsp; &nbsp;Top level pipelines can execute in parallel. An agent helps execute. 
+&nbsp; &nbsp; &nbsp; &nbsp;Top level pipelines can execute in parallel. An agent helps execute. 
 In theory, you should want more agents for parallelization. 
 If you only have one agent, this means that all processes will be waiting until the agent is done with it's current process. 
 For our purposes, we have only downloaded one agent to see everything done one after another. 
@@ -143,7 +164,9 @@ When something fails, it will not tell you directly, you will have to go and dig
 We do not claim the pictures as our own. Pictures were taken from the following sites:
 </p><p>
 Background Picture - <a href=" http://www.rgbstock.com/photo/n2UtdJe/Rainbow+Gradient+Background"> http://www.rgbstock.com/photo/n2UtdJe/Rainbow+Gradient+Background</a>
+
 Unicorn Gif - <a href="http://animal-jam-clans-1.wikia.com/wiki/File:Unicorn.gif">http://animal-jam-clans-1.wikia.com/wiki/File:Unicorn.gif</a> 
+
 GoCD Logo - <a href="https://brandfolder.com/twproducts/#!asset/o4ltkt-25kv7k-ai0s3j">https://brandfolder.com/twproducts/#!asset/o4ltkt-25kv7k-ai0s3j</a>  
 </p>
 
