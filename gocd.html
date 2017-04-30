@@ -20,6 +20,11 @@ h2{
 	max-height: 150px
 	max_width: 200px
 }
+hr{
+	margin-left: 130px
+	margin-right: 130px
+	border-width: 3px
+}
 </style>
 
 </head>
@@ -29,8 +34,10 @@ h2{
 <h1><b>
 <img class = "IMG" src = "Go Logo.png" alt = "" style = "width:200px;height:200px"/>
 
+
 <br>
 </br>
+<hr>
 GoCD
 </b>
  - Continuous Development
@@ -58,11 +65,25 @@ For our agent, we left the URL blank so that the default would be set to the loc
 GoCD made it's own icon based on default. We clicked it and it brought up GoCD in Google Chrome. 
 There are three steps listed. 
 </p>
+
+
+<p>
+Figure 1 is the first screen that will appear when you run goCD. It has 3 basic steps listed below.
+</p>
+
+<br></br>
+
+
+<p><center>
+<img class = "IMG" src = "pic2forgocd.png" alt = ""/>
+
+</p><p>Figure 1 - Basic Settings </p></center>
+
 <p><b>
 Step 1:
 </b> 
-Basic Settings - We set up our Pipeline name as CandaceandKaitlyn and the Pipeline Group name as default. 
-Clicked next.
+Basic Settings - We set up our Pipeline name as MyFirstPipeline and the Pipeline Group Name as Demo. 
+You can then click next.
 </p>
 <p>
 <b>
@@ -70,72 +91,93 @@ Step 2:
 </b> Materials - There is an option for material type. 
 Under this, there are several things listed. 
 For example, there is subversion, git, mercurial, etc. 
-For now, we chose Git as the "Material Type" and for the URL, we are using the laravel git repository. GoCD will be looking at the master branch. 
-"poll for new changes" was already marked, so we kept that as default. We then checked the connection to make sure GoCD understood the URL it was given.
-You can then continue to the next step.
+For now, we chose Git as the "Material Type" and for the URL, we are using a simple "Hello World" example given from the goCD website.
+You can find the link here  https://github.com/gocd-contrib/getting-started-repo. 
+Although this seems almost too simple, you can also run it on any Git repository of your choosing.
+
+GoCD will be looking at the master branch. 
+You may keep your settings at default. "poll for new changes" is already marked, so we kept that as default. 
+We then checked the connection to make sure GoCD understands the URL it was given.
+You can then continue to the next step given to you in Figure 2.
 </p>
+
+<br></br>
+
+
+
+<p><center>
+<img class = "IMG" src = "pic4.png" alt = ""/>
+
+</p><p>Figure 2 - Defining the Job</p></center>
+<br></br>
 <p>
 <b>
 Step 3:
 </b> Stage/Job - Stage name is Stage1. Job Name - defaultJob. 
-We changed the task type to the ./build command and we pressed finish. Pipeline is now made.
+We changed the task type to the ./build command and we pressed finish. Pipeline is now made. 
+It is important when using Git repositories that you use the ./build function or else it may fail.
 </p>
-<p>
-This is the first screen that will appear when you run goCD. It has 3 basic steps.
-</p>
-<p>
-<img class = "IMG" src = "pic1forgocd.png" alt = ""/>
-</p>
-<p>
-Step 1 would be to give your pipeline a name. Here, it is called "MyFirstPipeline"
-and we made the Pipeline Group name "Demo". You can then click next after you have given them a name.
-</p>
-<p>
-<img class = "IMG" src = "pic2forgocd.png" alt = ""/>
-</p>
-<p>
-<img class = "IMG" src = "pic2forgocd.png" alt = ""/>
-</p>
-<p>
-<img class = "IMG" src = "pic4.png" alt = ""/>
-</p>
-<p>
-<img class = "IMG" src = "pic5.png" alt = ""/>
-</p>
-<p>
-<img class = "IMG" src = "pic6.png" alt = ""/>
-</p>
-<p>
-<img class = "IMG" src = "pic7.png" alt = ""/>
-</p>
-<p>
-<img class = "IMG" src = "pic8.png" alt = ""/>
-</p>
-<p>
-<img class = "IMG" src = "pic9.png" alt = ""/>
-</p>
-
 
 
 <h2>
-Results
-</h2>
+Building</h2>
+<p><center>
+<img class = "IMG" src = "pic5.png" alt = ""/>
+
+</p><p>Figure 3 - Screen After Setup</p></center>
 <p>
-&nbsp; &nbsp; &nbsp; &nbsp;The pipeline is paused so that you can change some settings. 
-You can now unpause it for now to see the output. It will slowly try to build. 
-Right now, it is failing... We tried triggering the pipeline but there is something going wrong. 
-I think someone made a change while I was trying to set GoCD up and run and now i am getting a name for a commit when i check the changes. 
-It shows that last commit by Taylor Otwell and the merge request he put in.
-
-Instead of laravel, we decided a repository with relatively no activity would help fix the issue.
-We are also keeping "poll for new changes" unmarked. This may have caused the failing. 
-Instead, we used derby, which also seemed like it wasn't working. 
-Although goCD works well to describe dependencies on big files, I don't think it is practical for this project considering how slow my computer is.
-We are going to try another repository yet again. goCD has been running derby for about 2 hours on my computer.
-It is still in progress.
-Our third trial will be akuron. It was last updated in Feb. of 2013 and it is a relatively small project.
-
+The setup is done, however it will not start to run until you press the pause button in the top left corner.
+The pause button is set to "on" right after setup in case you want to change any other settings.
+If you would like to keep the default settings, you can continue and press the button.
 </p>
+<br></br>
+
+
+<p><center>
+<img class = "IMG" src = "pic6.png" alt = ""/>
+
+</p><p>Figure 4 - Running the Pipeline</p></center>
+<p>
+Once you give goCD permission to run, you will see this yellow bar pop up. This means that it is running.
+It should not take long to run if you are only running it on a small program.
+<br></br>
+
+
+
+<p><center>
+<img class = "IMG" src = "pic7.png" alt = ""/>
+
+</p><p>Figure 5 - Running Completed</p></center>
+<p>
+Soon after allowing it to run, it should turn green like above in Figure 5 as long as it has successfully completed.
+Sometimes it will turn red. This means that the program has failed.
+You can click on the green bar to see information about your repository.
+</p>
+<br></br>
+
+
+
+<p><center>
+<img class = "IMG" src = "pic8.png" alt = ""/>
+
+</p><p>Figure 6 - Overview</p></center>
+<p> 
+
+You can see the status of our "defaultStage" in Figure 6. You are able to see the last Git commit that someone last made under the revision.
+It shows you the last commit so that you can compare different pipelines and keep track of what the pipeline looked like earlier on in production.
+
+<br></br>
+
+
+
+<p><center>
+<img class = "IMG" src = "pic9.png" alt = ""/>
+
+</p><p> Figure 7 - Building </p></center>
+<br></br>
+
+
+
 <h2>
 Usefulness
 </h2>
@@ -161,6 +203,7 @@ You may start with a green value stream, meaning that everything is "good to go"
 You can have a yellow value stream or a red value stream. Yellow means that it is building and red is failing. 
 When something fails, it will not tell you directly, you will have to go and dig in to the problem yourself.
 </p>
+<br></br>
 <p>
 <tr>
 <td>
