@@ -83,14 +83,16 @@ We will be using our own command called ./build.
 
 <p>
 <b>Job</b>
-A job is a list or collection of tasks. 
+A job is a list or collection of tasks. Each task in a job will execute one after another.
+If anything fails in an execution, then nothing after it will execute. They are dependent on one another. 
 
 
 </p>
 <p>
 <b>
 Stage</b>
-
+A stage is a collection of jobs but it is non-sequential meaning that nothing inside of the stage has to be in any 
+particular order. No job relies on another. This makes it possible for GoCD to run in parallel.
 </p>
 
 
@@ -157,8 +159,11 @@ You can then continue to the next step given to you in Figure 2.
 <b>
 Step 3:
 </b> Stage/Job - Stage name is Stage1. Job Name - defaultJob. 
-We changed the task type to "more..." and put in "./build" for the command and pressed finish. Pipeline is now made. 
-It is important when using Git repositories that you use the ./build function or else it may fail.
+We changed the task type to "more..." and put in "./build" for the command and pressed finish. 
+There are also other built-in options for you to choose from. Depending on your repository,
+you may want to use what has already been given. Pipeline is now made. 
+The ./build function seems the easiest to work with. 
+
 </p>
 
 
@@ -169,7 +174,8 @@ Building</h2>
 
 </p><p>Figure 3 - Screen After Setup</p></center>
 <p>
-The setup is done, however it will not start to run until you press the pause button in the top left corner.
+The setup is done, however it will not start to run until you press the pause button in the top left 
+corner.
 The pause button is set to "on" right after setup in case you want to change any other settings.
 If you would like to keep the default settings, you can continue and press the button.
 </p>
@@ -195,6 +201,9 @@ It should not take long to run if you are only running it on a small program.
 Soon after allowing it to run, it should turn green like above in Figure 5 as long as it has successfully completed.
 Sometimes it will turn red. This means that the program has failed.
 You can click on the green bar to see information about your repository.
+Clicking the green bar tells you the last commit that was made on the repo.
+This is a nice feature because you can look back at old models of your program and compare and see what went wrong.
+
 </p>
 <br></br>
 
@@ -207,7 +216,16 @@ You can click on the green bar to see information about your repository.
 <p> 
 
 You can see the status of our "defaultStage" in Figure 6. You are able to see the last Git commit that someone last made under the revision.
+Here, the commit is made by Aravind SV under the README document. 
 It shows you the last commit so that you can compare different pipelines and keep track of what the pipeline looked like earlier on in production.
+
+You can see on the left GoCD keeps track of the different jobs you have made for the repo.
+We have only run 1 job so we have "Passed: 1". None are in progress and none failed.
+
+Towards the top, you can see how long it took GoCD to run on the repo along with the exact 
+time that it was triggered. If you have a series of jobs for GoCD to perform, this may be helpful to you.
+You can run tests to see which jobs take longer on your repo than others and make 
+assumptions as to what you could fix to make it faster. 
 
 <br></br>
 
@@ -220,26 +238,30 @@ It shows you the last commit so that you can compare different pipelines and kee
 
 <h2>
 Tool Evaluation
-<h2>
+</h2>
 <p>
 <b>
 Time to Install
+</p>
 </b>
+<p>
 Installation did not take much time at all. You can easily find the links to install and it is as 
 simple as running the executable. There are no other extra steps unless you want to have special settings.
 Special settings are really not that necessary unless you want to look deeper into 
-
+</p>
+<p>
 <b>
 User Friendliness
-</b>
+</b></p><p>
 This is not very user friendly. Finding your way around the tool was not easy. Some of the settings
 are vague and you have to look up a lot of the descriptions for the terms they use on their website.
  For example, you need to know a lot of different vocabulary that isn't really used - or at least not that often - in
  software. 
- 
-
-
-</p>
+I think the "task" section on their website could use some more explaining. I understood how to use the build 
+but they also had Rake, Ant, and NAnt, which i'm not all that familiar with. Instead 
+of being able to go on to their website, you have to make use of other resources which i found 
+tedious. 
+ </p>
 
 
 <h2>
@@ -282,7 +304,7 @@ When something fails, it will not tell you directly, you will have to go and dig
 <p>
 <tr>
 <td>
-<img class = "IMG" src = "Unicorn.gif" alt = "" style = "width:200px;height:150px"/>
+<img class = "IMG" src = "Unicorn.gif" alt = "" style = "width:100px;height:75px"/>
 </td>
 </tr>
 </p>
