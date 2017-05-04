@@ -56,39 +56,43 @@ It allows the user to model complex workflows with its fan-in, fan-out dependenc
 
 In order to understand goCD, you will have to understand some of the vocabulary that they use.
 There are four very important terms that you will come across when using this tool. The words <b>pipeline, stage, job, and task</b>.
-
+An example of a pipeline is shown below. 
+<p><center>
+<img class = "IMG" src = "task.png" alt = ""/>
+</center>
+</p>
 <p>
-<img class = "IMG" src = "stagetaskexample.xcf" alt = ""/>
-
+Each pipeline has a stage, a stage consists of jobs and inside each job, there is a task. There can be 
+more or fewer of each depending on the project. All of these make up the pipeline.
 </p>
 
-<p>
-<b>
-Pipeline
-</b>
-
-
-
-
-</p>
 <p>
 <b>Task
 </b>
+A task id usually a command that is used to run the job. Not every task is simple, although there are 
+many options for you to already choose from. You can use plugins as well such as 
+repository pollers. There exists pollers for Maven, Debian, Puppet Forge, and many others.
+A repository poller is basically just a way to take something from a main repository. When you tell goCD to "poll for changes", 
+you are telling it to update your pipeline every time something changes. This is called a trigger.
 
+Some options that are already given to you would be NAnt, Ant, and Rake. 
+We will be using our own command called ./build. 
 
 </p>
 
+
+<p>
+<b>Job</b>
+A job is a list or collection of tasks. 
+
+
+</p>
 <p>
 <b>
 Stage</b>
 
 </p>
-<p>
-<b>Job</b>
 
-
-
-</p>
 
 
 </p>
