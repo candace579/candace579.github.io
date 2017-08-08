@@ -2,4 +2,4 @@
 
 This is a writeup of goCD, continuous delivery.
 
-page.html is our html documentation so far for our writeup of goCD. 
+To see the webpage made for this, https://candace579.github.io/gocd in to your browser. 
